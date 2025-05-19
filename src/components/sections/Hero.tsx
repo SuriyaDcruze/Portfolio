@@ -28,15 +28,15 @@ const Hero: React.FC = () => {
     >
       {theme === 'light' && (
         <div className="absolute inset-0 w-full h-full">
-          <video
+          {/* <video
             autoPlay
             muted
             loop
             playsInline
             className="object-cover w-full h-full"
           >
-            <source src="https://cdn.coverr.co/videos/coverr-typing-on-computer-1584/1080p.mp4" type="video/mp4" />
-          </video>
+          <source src="https://cdn.coverr.co/videos/coverr-typing-on-computer-1584/1080p.mp4" type="video/mp4" />
+          </video> */}
           <div className="absolute inset-0 bg-white/70 backdrop-blur-sm"></div>
         </div>
       )}
@@ -50,11 +50,11 @@ const Hero: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 slide-up">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-500">
-              John Doe
+              SOUNDHAR N
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 slide-up">
-            <span className="font-semibold">UI/UX Designer & Developer</span> creating beautiful digital experiences
+            <span className="font-semibold">Full Stack Developer & Automation Tester</span> building intelligent web solutions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center slide-up">
             <a 

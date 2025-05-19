@@ -3,49 +3,50 @@ export interface TechnicalSkill {
   level: number;
 }
 
-export interface DesignSkill {
+export interface ProfessionalSkill {
   name: string;
   icon: string;
 }
 
+
 export const skills = {
   technical: [
-    { name: "HTML/CSS", level: 95 },
+    { name: "React", level: 95 },
     { name: "JavaScript", level: 90 },
-    { name: "React", level: 88 },
-    { name: "TypeScript", level: 85 },
-    { name: "Node.js", level: 80 },
+    { name: "HTML/CSS", level: 88 },
+    { name: "Tailwind Css", level: 80 },
     { name: "UI/UX Design", level: 85 },
-    { name: "Responsive Design", level: 92 },
-    { name: "GraphQL", level: 75 }
+    
+    
   ],
   design: [
     { 
-      name: "Figma", 
-      icon: "https://cdn.worldvectorlogo.com/logos/figma-1.svg" 
+      name: "Python", 
+      icon: "https://static.cdnlogo.com/logos/p/3/python.svg" 
     },
     { 
-      name: "Adobe XD", 
-      icon: "https://cdn.worldvectorlogo.com/logos/adobe-xd-1.svg" 
+      name: "Java", 
+      icon: "https://static.cdnlogo.com/logos/j/2/java.svg" 
     },
     { 
-      name: "Photoshop", 
-      icon: "https://cdn.worldvectorlogo.com/logos/photoshop-cc-4.svg" 
+      name: "Node", 
+      icon: "https://static.cdnlogo.com/logos/n/94/nodejs-icon.svg" 
     },
     { 
-      name: "Illustrator", 
-      icon: "https://cdn.worldvectorlogo.com/logos/adobe-illustrator-cc-2019.svg" 
+      name: "MySQL", 
+      icon: "https://static.cdnlogo.com/logos/m/78/mysql.svg" 
     },
     { 
-      name: "Sketch", 
-      icon: "https://cdn.worldvectorlogo.com/logos/sketch-2.svg" 
+      name: "Mongo DB", 
+      icon: "https://static.cdnlogo.com/logos/m/30/mongodb-icon.svg" 
     },
-    { 
-      name: "InVision", 
-      icon: "https://cdn.worldvectorlogo.com/logos/invision.svg" 
-    }
+    // { 
+    //   name: "InVision", 
+    //   icon: "https://cdn.worldvectorlogo.com/logos/invision.svg" 
+    // }
   ],
   soft: [
+    "Team Lead",
     "Problem Solving",
     "Communication",
     "Teamwork",

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
@@ -10,7 +10,6 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -33,35 +32,11 @@ const Contact: React.FC = () => {
       }, 5000);
     }, 1500);
   };
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
 
   return (
     <section id="contact" className="section bg-white dark:bg-gray-900 py-24">
-      <div className="container mx-auto px-4" ref={sectionRef}>
-        <div className="max-w-3xl mx-auto text-center mb-16 opacity-0 transition-opacity duration-500" style={{ animationDelay: '100ms' }}>
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <h6 className="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-2">
             Get In Touch
           </h6>
@@ -75,7 +50,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="space-y-8 opacity-0 transition-opacity duration-500" style={{ animationDelay: '200ms' }}>
+          <div className="space-y-8">
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
               Let's Talk
             </h3>
@@ -93,7 +68,7 @@ const Contact: React.FC = () => {
                     Location
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    New York, NY 10012, USA
+                    Chennai , Porur
                   </p>
                 </div>
               </div>
@@ -107,7 +82,7 @@ const Contact: React.FC = () => {
                     Email
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    info@portfolio.com
+                    suryananthakumar0007@gmail.com
                   </p>
                 </div>
               </div>
@@ -121,14 +96,14 @@ const Contact: React.FC = () => {
                     Phone
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    +1 (555) 123-4567
+                    +91 95977 54821
                   </p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="opacity-0 transition-opacity duration-500" style={{ animationDelay: '300ms' }}>
+          <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>

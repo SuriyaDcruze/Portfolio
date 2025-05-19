@@ -10,64 +10,37 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    id: 1,
-    title: "Modern E-commerce Platform",
-    description: "A fully responsive e-commerce website with product filtering, cart functionality, and secure checkout.",
-    image: "https://images.pexels.com/photos/5076516/pexels-photo-5076516.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    category: "web",
-    technologies: ["React", "Node.js", "Stripe"],
-    liveLink: "#",
-    repoLink: "#"
-  },
-  {
-    id: 2,
-    title: "Finance Dashboard",
-    description: "Interactive dashboard for financial data visualization with real-time updates and customizable widgets.",
-    image: "https://images.pexels.com/photos/7567441/pexels-photo-7567441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    category: "web",
-    technologies: ["React", "D3.js", "Firebase"],
-    liveLink: "#",
-    repoLink: "#"
-  },
-  {
-    id: 3,
-    title: "Task Management App",
-    description: "A productivity application for managing tasks, projects, and team collaboration with real-time updates.",
-    image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    category: "mobile",
-    technologies: ["React Native", "Redux", "Firebase"],
-    liveLink: "#",
-    repoLink: "#"
-  },
-  {
-    id: 4,
-    title: "Health & Fitness Tracker",
-    description: "Mobile application for tracking workouts, nutrition, and health metrics with personalized insights.",
-    image: "https://images.pexels.com/photos/4498362/pexels-photo-4498362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    category: "mobile",
-    technologies: ["Flutter", "Firebase", "GraphQL"],
-    liveLink: "#",
-    repoLink: "#"
-  },
-  {
-    id: 5,
-    title: "Restaurant Booking System",
-    description: "Complete booking system for restaurants with table management, reservations, and customer notifications.",
-    image: "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    category: "web",
-    technologies: ["React", "Node.js", "MongoDB"],
-    liveLink: "#",
-    repoLink: "#"
-  },
-  {
-    id: 6,
-    title: "Travel Experience Platform",
-    description: "Platform for discovering, booking, and sharing unique travel experiences with interactive maps.",
-    image: "https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    category: "web",
-    technologies: ["React", "Node.js", "MongoDB"],
-    liveLink: "#",
-    repoLink: "#"
-  }
+ {
+  id: 1,
+  title: "Employee Self Services",
+  description: "A comprehensive employee self-service portal to manage attendance, leave, and personal information with a seamless user experience.",
+  image: "https://www.shutterstock.com/image-illustration/employee-self-service-tech-concepta-260nw-2622186021.jpg",
+  category: "web",
+  technologies: ["Django", "React", "MySQL", "Tailwind CSS"],
+  liveLink: "https://ess-frontent.vercel.app/",
+  repoLink: "https://github.com/SuriyaDcruze/new_ess_final"
+},
+
+ {
+  id: 2,
+  title: "Billing",
+  description: "Interactive dashboard for financial data visualization with real-time updates and customizable widgets.",
+  image: "https://media.istockphoto.com/id/2078490118/photo/businessman-using-laptop-to-online-payment-banking-and-online-shopping-financial-transaction.jpg?s=612x612&w=0&k=20&c=1x2G24ANsWxG4YW6ZaoeFPEzjmKFE4ZlohVQSwbjGj8=",
+  category: "web",
+  technologies: ["Django", "Python", "React", "Tailwind CSS", "MySQL"],
+  liveLink: "/billing-in-progress",
+  repoLink: "https://github.com/SuriyaDcruze/FRONTEND_BILLING"
+},
+
+{
+  id: 3,
+  title: "CRM",
+  description: "A fully-fledged sales-oriented CRM system designed to streamline customer management, sales tracking, and communication.",
+  image: "https://thumbs.dreamstime.com/b/real-estate-leads-traffic-sign-blue-sky-background-286858664.jpg",
+  category: "web",
+  technologies: ["Node.js", "React", "MongoDB", "Tailwind CSS"],
+  liveLink: "#",
+  repoLink: "https://github.com/SuriyaDcruze/CRM"
+}
+
 ];

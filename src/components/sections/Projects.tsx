@@ -13,33 +13,13 @@ const Projects: React.FC = () => {
   const categories = ['all', ...Array.from(new Set(projects.map(p => p.category)))];
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    // Removed IntersectionObserver and related animation logic
   }, []);
 
   return (
     <section id="projects" className="section bg-gray-50 dark:bg-gray-800 py-24">
       <div className="container mx-auto px-4" ref={sectionRef}>
-        <div className="max-w-3xl mx-auto text-center mb-16 opacity-0 transition-opacity duration-500" style={{ animationDelay: '100ms' }}>
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <h6 className="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-2">
             My Work
           </h6>
@@ -52,7 +32,7 @@ const Projects: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center mb-12 opacity-0 transition-opacity duration-500" style={{ animationDelay: '200ms' }}>
+        <div className="flex flex-wrap justify-center mb-12">
           <div className="flex flex-wrap justify-center space-x-2 mb-8">
             {categories.map((cat) => (
               <button
@@ -71,11 +51,10 @@ const Projects: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <div 
               key={project.id}
-              className="card group overflow-hidden opacity-0 transition-opacity duration-500"
-              style={{ animationDelay: `${300 + index * 100}ms` }}
+              className="card group overflow-hidden"
             >
               <div className="relative overflow-hidden aspect-video">
                 <img

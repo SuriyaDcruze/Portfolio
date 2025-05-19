@@ -16,31 +16,9 @@ const Testimonials: React.FC = () => {
   };
   
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    // Removed IntersectionObserver animation code
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-  
-  useEffect(() => {
-    // Auto-advance slides
+    // Just keep auto-advance logic
     timeoutRef.current = setTimeout(next, 6000);
     
     return () => {
@@ -53,7 +31,7 @@ const Testimonials: React.FC = () => {
   return (
     <section id="testimonials" className="section bg-gray-50 dark:bg-gray-800 py-24">
       <div className="container mx-auto px-4" ref={sectionRef}>
-        <div className="max-w-3xl mx-auto text-center mb-16 opacity-0 transition-opacity duration-500" style={{ animationDelay: '100ms' }}>
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <h6 className="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-2">
             Testimonials
           </h6>
@@ -62,11 +40,11 @@ const Testimonials: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-primary-600 dark:bg-primary-400 mx-auto mb-6"></div>
           <p className="text-lg text-gray-700 dark:text-gray-300">
-            Feedback from clients and colleagues about my work and collaboration.
+            Feedback from  colleagues about my work and collaboration.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto relative opacity-0 transition-opacity duration-500" style={{ animationDelay: '200ms' }}>
+        <div className="max-w-4xl mx-auto relative">
           <div className="absolute top-10 left-10 text-primary-300 dark:text-primary-600 opacity-50">
             <Quote size={60} />
           </div>
@@ -76,9 +54,7 @@ const Testimonials: React.FC = () => {
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className={`transition-opacity duration-500 absolute w-full ${
-                    index === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                  }`}
+                  className={`absolute w-full ${index === current ? 'z-10' : 'z-0 hidden'}`}
                 >
                   <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl italic mb-8">
                     {testimonial.text}
@@ -107,7 +83,7 @@ const Testimonials: React.FC = () => {
             <div className="flex justify-between mt-8">
               <button
                 onClick={prev}
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft size={24} />
@@ -118,7 +94,7 @@ const Testimonials: React.FC = () => {
                   <button
                     key={index}
                     onClick={() => setCurrent(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    className={`w-3 h-3 rounded-full ${
                       index === current
                         ? 'bg-primary-600 w-6'
                         : 'bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600'
@@ -130,7 +106,7 @@ const Testimonials: React.FC = () => {
               
               <button
                 onClick={next}
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400"
                 aria-label="Next testimonial"
               >
                 <ChevronRight size={24} />

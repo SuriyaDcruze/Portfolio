@@ -13,11 +13,11 @@ const Footer: React.FC = () => {
               thoughtful functionality.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
+              <a href="https://github.com/SuriyaDcruze" className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
                 <Github size={20} />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="#" className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
+              <a href="https://www.linkedin.com/in/soundhar-n-826718352?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
                 <Linkedin size={20} />
                 <span className="sr-only">LinkedIn</span>
               </a>
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 <Twitter size={20} />
                 <span className="sr-only">Twitter</span>
               </a>
-              <a href="#" className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
+              <a href="mailto:soundharnanthakumar@gmail.com?subject=Hello&body=I%20just%20visited%20your%20portfolio!"className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors">
                 <Mail size={20} />
                 <span className="sr-only">Email</span>
               </a>
@@ -55,9 +55,9 @@ const Footer: React.FC = () => {
               Contact
             </h3>
             <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-              <li>New York, NY</li>
-              <li>info@portfolio.com</li>
-              <li>(555) 123-4567</li>
+              <li>Chennai,Tamil Nadu </li>
+              <li>suriyananthakumar0007@gmail.com</li>
+              <li>+91 95977 54821</li>
             </ul>
           </div>
         </div>
