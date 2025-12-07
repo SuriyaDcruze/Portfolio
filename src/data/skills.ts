@@ -8,53 +8,61 @@ export interface ProfessionalSkill {
   icon: string;
 }
 
-
 export const skills = {
   technical: [
-    { name: "React", level: 95 },
-    { name: "JavaScript", level: 90 },
-    { name: "HTML/CSS", level: 88 },
-    { name: "Tailwind Css", level: 80 },
-    { name: "UI/UX Design", level: 85 },
-    
-    
+    { name: "React / Next.js", level: 95 },
+    { name: "Python / Django", level: 92 },
+    { name: "GenAI / RAG", level: 90 },
+    { name: "TypeScript", level: 88 },
+    { name: "Node.js", level: 85 },
+    { name: "MySQL / MongoDB / PostgreSQL", level: 90 },
+    { name: "Tailwind CSS", level: 90 },
   ],
   design: [
-    { 
-      name: "Python", 
-      icon: "https://static.cdnlogo.com/logos/p/3/python.svg" 
+    {
+      name: "Git",
+      icon: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
     },
-    { 
-      name: "Java", 
-      icon: "https://static.cdnlogo.com/logos/j/2/java.svg" 
+    {
+      name: "GitHub",
+      icon: "https://www.vectorlogo.zone/logos/github/github-icon.svg"
     },
-    { 
-      name: "Node", 
-      icon: "https://static.cdnlogo.com/logos/n/94/nodejs-icon.svg" 
+    {
+      name: "AWS",
+      icon: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg"
     },
-    { 
-      name: "MySQL", 
-      icon: "https://static.cdnlogo.com/logos/m/78/mysql.svg" 
+    {
+      name: "Firebase",
+      icon: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg"
     },
-    { 
-      name: "Mongo DB", 
-      icon: "https://static.cdnlogo.com/logos/m/30/mongodb-icon.svg" 
+    {
+      name: "Docker",
+      icon: "https://www.vectorlogo.zone/logos/docker/docker-icon.svg"
     },
-    // { 
-    //   name: "InVision", 
-    //   icon: "https://cdn.worldvectorlogo.com/logos/invision.svg" 
-    // }
+    {
+      name: "Figma",
+      icon: "https://www.vectorlogo.zone/logos/figma/figma-icon.svg"
+    },
+    {
+      name: "VS Code",
+      icon: "https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg"
+    },
+    {
+      name: "Postman",
+      icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+    },
+    {
+      name: "AI Dev Tools",
+      icon: "https://cdn.worldvectorlogo.com/logos/openai-2.svg"
+    }
   ],
   soft: [
-    "Team Lead",
-    "Problem Solving",
-    "Communication",
-    "Teamwork",
-    "Time Management",
-    "Adaptability",
-    "Creativity",
-    "Critical Thinking",
-    "Leadership",
-    "Attention to Detail"
+    "Technical Leadership & Team Management",
+    "Corporate Training & Mentorship",
+    "Client Stakeholder Management",
+    "Project Delivery Optimization",
+    "Workflow Architecture",
+    "Strategic Problem Solving",
+    "AI-Accelerated Workflow"
   ]
 };

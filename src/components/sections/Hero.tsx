@@ -1,92 +1,127 @@
-import React, { useEffect, useRef } from 'react';
-import { ArrowDown } from 'lucide-react';
-import { useTheme } from '../../contexts/ThemeContext';
+import React from 'react';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { cn } from '../../utils/cn';
 
 const Hero: React.FC = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { theme } = useTheme();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!heroRef.current) return;
-      const scrollY = window.scrollY;
-      const opacity = Math.max(1 - scrollY / 700, 0);
-      const translateY = scrollY * 0.3;
-      
-      heroRef.current.style.opacity = String(opacity);
-      heroRef.current.style.transform = `translateY(${translateY}px)`;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section 
-      id="home" 
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-gray-950"
     >
-      {theme === 'light' && (
-        <div className="absolute inset-0 w-full h-full">
-          {/* <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="object-cover w-full h-full"
-          >
-          <source src="https://cdn.coverr.co/videos/coverr-typing-on-computer-1584/1080p.mp4" type="video/mp4" />
-          </video> */}
-          <div className="absolute inset-0 bg-white/70 backdrop-blur-sm"></div>
-        </div>
-      )}
-      
-      <div className={theme === 'dark' ? 'absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800' : ''} />
-      
-      <div 
-        ref={heroRef}
-        className="container mx-auto px-4 z-10 transition-all duration-300 ease-out"
+      {/* Dynamic Background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <motion.div
+          style={{ y: y1, opacity: 0.6 }}
+          className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-primary-400/20 dark:bg-primary-500/10 blur-[100px]"
+        />
+        <motion.div
+          style={{ y: y2, opacity: 0.6 }}
+          className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-secondary-400/20 dark:bg-secondary-500/10 blur-[100px]"
+        />
+
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      </div>
+
+      <motion.div
+        style={{ opacity }}
+        className="container mx-auto px-6 z-10 relative"
       >
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 slide-up">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-500">
-              SOUNDHAR N
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <span className="inline-block py-1 px-3 rounded-full bg-primary-100/50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium mb-6 backdrop-blur-sm border border-primary-200/50 dark:border-primary-700/30">
+              Available for Freelance Projects
             </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 slide-up">
-            <span className="font-semibold">Full Stack Developer & Automation Tester</span> building intelligent web solutions
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center slide-up">
-            <a 
-              href="#projects" 
-              className="btn btn-primary"
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-900 dark:text-white mb-6"
+          >
+            Hi, I'm <br className="md:hidden" />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-secondary-500 to-primary-600 bg-300% animate-gradient">
+              Soundhar N
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto"
+          >
+            <span className="font-semibold text-gray-900 dark:text-white">Full Stack Developer</span> &
+            <span className="font-semibold text-gray-900 dark:text-white"> Automation Tester</span> crafting
+            robust web applications with modern technologies.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <a
+              href="#projects"
+              className="btn btn-primary min-w-[160px] group"
             >
               View My Work
+              <ArrowDown className="ml-2 w-4 h-4 transition-transform group-hover:translate-y-1" />
             </a>
-            <a 
-              href="#contact" 
-              className="btn btn-outline"
+            <a
+              href="#contact"
+              className="btn btn-outline min-w-[160px] bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm"
             >
               Get In Touch
             </a>
-          </div>
-        </div>
-      </div>
+          </motion.div>
 
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
-        <a 
-          href="#about"
-          className="p-2 rounded-full bg-white/80 dark:bg-gray-800/80 text-gray-800 dark:text-gray-200 shadow-md hover:shadow-lg transition-all duration-300"
-          aria-label="Scroll down"
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="mt-16 flex justify-center gap-6 text-gray-500"
+          >
+            <a href="https://github.com/SuriyaDcruze" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:scale-110 transform duration-200">
+              <Github size={24} />
+            </a>
+            <a href="https://www.linkedin.com/in/soundhar-n-826718352" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:scale-110 transform duration-200">
+              <Linkedin size={24} />
+            </a>
+            <a href="mailto:soundharnanthakumar@gmail.com" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:scale-110 transform duration-200">
+              <Mail size={24} />
+            </a>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ArrowDown size={24} />
-        </a>
-      </div>
-      
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5"></div>
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary-400/20 dark:bg-primary-600/10 rounded-full filter blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary-400/20 dark:bg-secondary-600/10 rounded-full filter blur-3xl"></div>
+          <ArrowDown className="text-gray-400 dark:text-gray-500" size={24} />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
