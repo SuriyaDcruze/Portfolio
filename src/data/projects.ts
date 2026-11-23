@@ -1,8 +1,12 @@
+import oneg8Logo from "../assets/oneg8-mark.png";
+
 export interface Project {
   id: number;
   title: string;
   description: string;
   image: string;
+  /** Show the whole image (e.g. a logo) instead of cropping it to fill the card */
+  isLogo?: boolean;
   category: string;
   technologies: string[];
   liveLink: string;
@@ -10,6 +14,48 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 11,
+    title: "OneG8",
+    description: "A Germany-based all-in-one digital hub that brings social media, video meetings, calendars, chats, teams and friend connections together in one platform, with a built-in blockchain-powered wallet system.",
+    image: oneg8Logo,
+    isLogo: true,
+    category: "web",
+    technologies: ["React", "Social Platform", "Video Meetings", "Real-time Chat", "Blockchain Wallet"],
+    liveLink: "https://oneg8.com",
+    repoLink: "#"
+  },
+  {
+    id: 12,
+    title: "Atlas Manager",
+    description: "A US-based AI-powered work management platform for industrial teams. It collects data from task management systems like ClickUp, processes it, and generates AI-driven summaries of employee work and project progress.",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+    category: "ai",
+    technologies: ["AI Summarization", "LLM", "ClickUp API", "Data Processing", "React"],
+    liveLink: "#",
+    repoLink: "#"
+  },
+  {
+    id: 13,
+    title: "WeShort",
+    description: "An OTT streaming platform built for streaming clients, featuring third-party integrations such as channel integration, AWS infrastructure setup and CDN-based content delivery.",
+    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80&w=800",
+    category: "web",
+    technologies: ["OTT", "Video Streaming", "AWS", "CDN", "Channel Integration"],
+    liveLink: "#",
+    repoLink: "#"
+  },
+  {
+    id: 10,
+    title: "AI Knowledge Assistant",
+    description: "An AI-powered assistant that answers questions over company documents using Retrieval-Augmented Generation (RAG), with semantic search, chat history and source citations.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+    category: "ai",
+    technologies: ["Python", "LangChain", "LLM APIs", "Vector DB", "React", "FastAPI"],
+    liveLink: "#",
+    repoLink: "#"
+  },
+
   {
     id: 1,
     title: "Employee Self Services",

@@ -58,16 +58,16 @@ const About: React.FC = () => {
                 Crafting digital experiences with <span className="text-primary-600 dark:text-primary-400">passion</span>.
               </motion.h2>
               <motion.p variants={itemVariants} className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm a passionate Python Full Stack Developer with a keen eye for UI/UX design. With over 2+ years of experience, I combine aesthetic design principles with robust backend logic to build intuitive, high-performing web applications.
+                I'm a passionate Python Full Stack Developer with a keen eye for UI/UX design. With 4+ years of experience, I combine aesthetic design principles with robust backend logic and AI integrations to build intuitive, high-performing web applications.
               </motion.p>
             </div>
 
             <motion.div variants={containerVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
                 { icon: User, label: "Name", value: "Soundhar N" },
-                { icon: Calendar, label: "Experience", value: "2+ Years" },
+                { icon: Calendar, label: "Experience", value: "4+ Years" },
                 { icon: MapPin, label: "Location", value: "Chennai, Porur" },
-                { icon: Briefcase, label: "Status", value: "Available for Hire" }
+                { icon: Briefcase, label: "Status", value: "Currently Employed" }
               ].map((item, index) => (
                 <motion.div
                   key={index}

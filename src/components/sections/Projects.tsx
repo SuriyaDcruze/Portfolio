@@ -79,11 +79,11 @@ const Projects: React.FC = () => {
                 key={project.id}
                 className="card group h-full flex flex-col"
               >
-                <div className="relative overflow-hidden aspect-video">
+                <div className={`relative overflow-hidden aspect-video ${project.isLogo ? 'bg-[#060b1a]' : ''}`}>
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${project.isLogo ? 'object-contain p-6' : 'object-cover'}`}
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 backdrop-blur-sm">
                     <div className="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">

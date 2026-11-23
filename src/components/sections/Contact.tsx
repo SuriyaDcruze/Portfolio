@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
                 Contact Information
               </h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-                I'm currently available for freelance work and full-time opportunities.
+                I'm open to full-time opportunities and collaborations on AI-powered products.
                 If you have a project that needs some creative touch, I'd love to hear about it.
               </p>
             </div>

@@ -34,16 +34,6 @@ const Hero: React.FC = () => {
         className="container mx-auto px-6 z-10 relative"
       >
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <span className="inline-block py-1 px-3 rounded-full bg-primary-100/50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium mb-6 backdrop-blur-sm border border-primary-200/50 dark:border-primary-700/30">
-              Available for Freelance Projects
-            </span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -62,9 +52,10 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto"
           >
-            <span className="font-semibold text-gray-900 dark:text-white">Full Stack Developer</span> &
+            <span className="font-semibold text-gray-900 dark:text-white">Full Stack Developer</span>,
+            <span className="font-semibold text-gray-900 dark:text-white"> AI Engineer</span> &
             <span className="font-semibold text-gray-900 dark:text-white"> Automation Tester</span> crafting
-            robust web applications with modern technologies.
+            intelligent, AI-powered web applications with LLMs, RAG pipelines and modern technologies.
           </motion.p>
 
           <motion.div
